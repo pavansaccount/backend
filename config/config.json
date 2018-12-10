@@ -1,0 +1,30 @@
+{
+    "development": {
+        "PORT": 3000,
+        "MONGODB_URI": "mongodb://localhost:27017/registration",
+        "JWT_SECRET": "SECRET#123",
+        "JWT_EXP": "30m",
+        "frontendURL": "http://localhost:4200",
+        "google": {
+            "clientId": "58271425488-f75vor2ch3644jio71ilufr7ncgreb9l.apps.googleusercontent.com",
+            "clientSecret": "4oDeQFQubboHmVj9xU0UTefW",
+            "callbackURL": "http://localhost:3000/api/auth/google/callback"
+        },
+      "twitter": {
+        "consumerKey": "yH1eWXqjnTkZzpTQ09mSsLG7h",
+        "consumerSecret": "zSz8UwyJduMyqsluGJUb7B83E5o1cJPWXeG2Tx4Dl76eishB5q",
+        "callbackURL": "http://localhost:3000/api/auth/twitter/callback"
+      },
+      "github": {
+        "clientId": "eb16e0c640fce4ecd5f5",
+        "clientSecret": "4eb1f9d708f45997a5148fc6c18d5fb803cd6b97",
+        "callbackURL": "http://localhost:3000/api/github/callback"
+      }
+    },
+    "production": {
+        "PORT": 8080,
+        "MONGODB_URI": "mongodb://pavan:pavankalyan5@ds151293.mlab.com:51293/sss",
+        "JWT_SECRET": "SECRET#123",
+        "JWT_EXP": "30m"
+    }
+}

@@ -28,7 +28,7 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use('/api', rtsIndex);
 app.use(passport.initialize());
-app.use(cors({ origin: 'https://student-supervision.netlify.com/' }));
+app.use(cors({ origin: 'http://localhost:4200/' }));
 app.set('views', path.join(__dirname, '/views/'));
 app.engine('hbs', exphbs({ extname: 'hbs' }));
 app.set('view engine', 'hbs');
@@ -45,6 +45,6 @@ app.use('/student', studentController);
 
 app.get('/failure', (req, res) => res.redirect('https://student-supervision.netlify.com/login'));
 // start server
-const port = process.env.PORT || 8080;
 
-app.listen(port, () => console.log(`Server started at port : ${process.env.PORT}`));
+
+app.listen(process.env.PORT, () => console.log(`Server started at port : ${process.env.PORT}`));

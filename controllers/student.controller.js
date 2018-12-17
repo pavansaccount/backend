@@ -8,13 +8,18 @@ var { Student } = require('../models/student.model.js');
 /*`
 });*/
 router.get('/:rollno', (req, res) => {
+    console.log(req.params.rollno);
     Student.findOne({ rollno: req.params.rollno },
         (err, stu) => {
-            if (!stu)
-                return res.status(404).json({ status: false, message: 'User record not found.' });
-            else {
-                return res.status(200).json({ status: true, stu: _.pick(stu, ['_id', 'rollno', 'email', 'name', 'position', 'office', 'salary']) });
+            if (!stu) {
+                console.log('in get d1');
+                return res.status(404).json({status: false, message: 'User record not found.'});
             }
+
+            else {
+                console.log('in get d2');
+                return res.status(200).json({ status: true, stu: _.pick(stu, ['_id', 'rollno', 'email', 'name', 'position', 'office', 'salary']) });
+                }
         }
     );
 });
@@ -31,6 +36,7 @@ router.get('/:_id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+    console.log(req.body.rollno);
     var stu = new Student({
         rollno: req.body.rollno,
         email: req.body.email,
